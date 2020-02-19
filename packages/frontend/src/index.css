@@ -1,0 +1,47 @@
+.labelFrame {
+  display: block;
+  margin-top: 10px;
+  position: fixed;
+}
+
+.item {
+  border-bottom: 3px solid #d1d1d1;
+}
+
+.save-btn {
+  width: 190px; /* 宽度 */
+  height: 35px; /* 高度 */
+  border-width: 0; /* 边框宽度 */
+  border-radius: 3px; /* 边框半径 */
+  background: #1e90ff; /* 背景颜色 */
+  cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+  outline: none; /* 不显示轮廓线 */
+  color: white; /* 字体颜色 */
+  font-size: 17px; /* 字体大小 */
+}
+
+.toolsButtonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-left: 2px solid #d1d1d1;
+  border-right: 2px solid #d1d1d1;
+  width: 50%;
+  height: 500px;
+}
+
+.toolsButtonGroup > button {
+  padding: 10px;
+  margin-top: 30px;
+  width: 200px;
+}
+
+.appLayout {
+  display: flex;
+  margin-left: 10px;
+}
+
+.TreeLayout {
+  width: 25%;
+}

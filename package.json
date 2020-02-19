@@ -1,0 +1,48 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "start": "lerna run --parallel start",
+    "lint": "tslint --project tslint.json",
+    "test": "lerna run --parallel test",
+    "build-frontend": "yarn run --cwd=packages/frontend build"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "copyfiles": "^2.0.0",
+    "husky": "^1.0.0-rc.9",
+    "lerna": "^2.11.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.5"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "tslint --fix",
+      "git add"
+    ],
+    "!(bundle)*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lerna run --parallel test"
+    }
+  },
+  "dependencies": {
+    "@blueprintjs/docs-theme": "^3.4.0",
+    "es6-promise": "^4.2.8",
+    "isomorphic-fetch": "^2.2.1",
+    "react-router": "^5.1.2"
+  }
+}
